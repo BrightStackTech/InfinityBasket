@@ -23,23 +23,23 @@ const aboutFeatures = [
   },
 ];
 
-const teamMembers = [
-  {
-    name: "Amit Sharma",
-    role: "Founder & CEO",
-    img: "https://randomuser.me/api/portraits/men/32.jpg",
-  },
-  {
-    name: "Priya Patel",
-    role: "Head of Operations",
-    img: "https://randomuser.me/api/portraits/women/44.jpg",
-  },
-  {
-    name: "Rahul Verma",
-    role: "Logistics Manager",
-    img: "https://randomuser.me/api/portraits/men/65.jpg",
-  },
-];
+// const teamMembers = [
+//   {
+//     name: "Amit Sharma",
+//     role: "Founder & CEO",
+//     img: "https://randomuser.me/api/portraits/men/32.jpg",
+//   },
+//   {
+//     name: "Priya Patel",
+//     role: "Head of Operations",
+//     img: "https://randomuser.me/api/portraits/women/44.jpg",
+//   },
+//   {
+//     name: "Rahul Verma",
+//     role: "Logistics Manager",
+//     img: "https://randomuser.me/api/portraits/men/65.jpg",
+//   },
+// ];
 
 const AboutUs = () => (
   <div className="container mx-auto px-4 md:px-12 pt-4 md:pb-4 pb-8">

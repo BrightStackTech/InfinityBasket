@@ -18,6 +18,7 @@ app.use(cors({
 }));
 app.use(express.json());
 
+
 // Initialize server function
 const initializeServer = async () => {
   try {

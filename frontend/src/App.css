@@ -44,13 +44,13 @@
     transform: rotate(0deg);
   }
   to {
-    transform: rotate(360deg);
+    transform: rotate(360deg);  
   }
 }
 
 ::selection {
   background: #FFD700; /* Gold */
-  color: #fff;         /* White text */
+  color: #1a202c;         /* White text */
 }
 
 @media (prefers-reduced-motion: no-preference) {

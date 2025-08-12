@@ -2,7 +2,7 @@ import { useState, useRef, useEffect } from 'react';
 import * as React from 'react';
 import { Link } from 'react-router-dom';
 import { motion, useScroll, useTransform, useMotionValue, animate } from 'framer-motion';
-import { FaTruck, FaShieldAlt, FaStar, FaPercent, FaFacebookF, FaTwitter, FaInstagram, FaLinkedinIn, FaWhatsapp, FaEnvelope, FaPhone, FaMapMarkerAlt } from 'react-icons/fa';
+import { FaTruck, FaShieldAlt, FaStar, FaPercent, FaFacebookF, FaTwitter, FaInstagram, FaWhatsapp, FaEnvelope, FaMapMarkerAlt } from 'react-icons/fa';
 import createGlobe from 'cobe';
 import WhatsappActionButton from '../components/WhatsappActionButton';
 import ProductCard from '../components/ProductCard';

@@ -1,0 +1,32 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+@layer utilities {
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+
+  .no-scrollbar {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+  }
+}
+
+/* Light mode selection */
+::selection {
+  background: #FFD700; /* Gold */
+  color: #1a202c;      /* Tailwind gray-900 */
+}
+
+.dark ::selection {
+  background: #FFD700; /* Gold */
+  color: #1a202c;      /* Tailwind gray-900 */
+}
+
+.react-hot-toast {
+  z-index: 9999 !important;
+  left: 50% !important;
+  right: auto !important;
+  transform: translateX(-50%) !important;
+}

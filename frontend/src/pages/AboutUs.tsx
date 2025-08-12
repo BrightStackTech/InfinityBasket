@@ -108,7 +108,7 @@ const AboutUs = () => (
     </motion.section>
 
     {/* Team Section */}
-    <motion.section
+    {/* <motion.section
       initial={{ opacity: 0, y: 40 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
@@ -131,7 +131,7 @@ const AboutUs = () => (
           ))}
         </div>
       </div>
-    </motion.section>
+    </motion.section> */}
 
     {/* Contact CTA */}
     <motion.section

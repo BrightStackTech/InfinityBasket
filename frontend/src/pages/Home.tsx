@@ -17,6 +17,16 @@ interface Product {
   featured: boolean;
 }
 
+interface ContactDetails {
+  email: string;
+  phone: string;
+  location: string;
+  hours: string;
+  instagram: string;
+  facebook: string;
+  twitter: string;
+}
+
 const AnimatedCounter = ({ value, className }: { value: number, className?: string }) => {
   const [isInView, setIsInView] = useState(false);
   const countingNumber = useMotionValue(0);
@@ -190,6 +200,31 @@ const Home = () => {
   const productsX = useTransform(scrollYProgress, [0, 1], ["25%", "-39.666%"]);
   const [featuredProducts, setFeaturedProducts] = useState<Product[]>([]);
   const [isLoading, setIsLoading] = useState(true);
+
+  const [contactDetails, setContactDetails] = useState<ContactDetails>({
+    email: '',
+    phone: '',
+    location: '',
+    hours: '',
+    instagram: '',
+    facebook: '',
+    twitter: ''
+  });
+
+  useEffect(() => {
+    const fetchContactDetails = async () => {
+      try {
+        const response = await api.get('/contact/details');
+        if (response.data) {
+          setContactDetails(response.data);
+        }
+      } catch (error) {
+        console.error('Failed to load contact details:', error);
+      }
+    };
+
+    fetchContactDetails();
+  }, []);
 
   const features = [
     {
@@ -620,17 +655,32 @@ const Home = () => {
                 InfinityBasket is amongst the best FMCG, import, and export groups that work globally.
               </p>
               <div className="flex gap-4">
-                <a href="#" className="text-gold-500 hover:text-gold-600" title="Follow us on Facebook" aria-label="Follow us on Facebook">
+                <a 
+                  href={contactDetails.facebook} 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className="text-gold-500 hover:text-gold-600" 
+                  title="Follow us on Facebook"
+                >
                   <FaFacebookF size={20} />
                 </a>
-                <a href="#" className="text-gold-500 hover:text-gold-600" title="Follow us on Twitter" aria-label="Follow us on Twitter">
+                <a 
+                  href={contactDetails.twitter} 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className="text-gold-500 hover:text-gold-600" 
+                  title="Follow us on Twitter"
+                >
                   <FaTwitter size={20} />
                 </a>
-                <a href="#" className="text-gold-500 hover:text-gold-600" title="Follow us on Instagram" aria-label="Follow us on Instagram">
+                <a 
+                  href={contactDetails.instagram} 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className="text-gold-500 hover:text-gold-600" 
+                  title="Follow us on Instagram"
+                >
                   <FaInstagram size={20} />
-                </a>
-                <a href="#" className="text-gold-500 hover:text-gold-600" title="Connect with us on LinkedIn" aria-label="Connect with us on LinkedIn">
-                  <FaLinkedinIn size={20} />
                 </a>
               </div>
             </div>
@@ -641,19 +691,26 @@ const Home = () => {
               <div className="space-y-4">
                 <p className="flex items-center gap-3 dark:text-gray-300">
                   <FaMapMarkerAlt className="text-gold-500" />
-                  <span>123 Business Center, Mumbai 400021</span>
-                </p>
-                <p className="flex items-center gap-3 dark:text-gray-300">
-                  <FaPhone className="text-gold-500" />
-                  <span>+91 22-66664951</span>
-                </p>
-                <p className="flex items-center gap-3 dark:text-gray-300">
-                  <FaEnvelope className="text-gold-500" />
-                  <span>info@infinitybasket.com</span>
+                  <span>{contactDetails.location || 'Loading...'}</span>
                 </p>
                 <p className="flex items-center gap-3 dark:text-gray-300">
                   <FaWhatsapp className="text-gold-500" />
-                  <span>+91 98765 43210</span>
+                  <span>{contactDetails.phone || 'Loading...'}</span>
+                </p>
+                <p className="flex items-center gap-3 dark:text-gray-300">
+                  <FaEnvelope className="text-gold-500" />
+                  <span>{contactDetails.email || 'Loading...'}</span>
+                </p>
+                <p className="flex items-center gap-3 dark:text-gray-300">
+                  <FaInstagram className="text-gold-500" />
+                  <a 
+                    href={contactDetails.instagram} 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="hover:text-gold-500 transition-colors"
+                  >
+                    @infinitybasketofficial
+                  </a>
                 </p>
               </div>
             </div>

@@ -219,6 +219,7 @@ const Contact = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.7, delay: 0.3 }}
             className="bg-white dark:bg-gray-900 rounded-xl shadow-lg p-6"
+            id='contact-form'
           >
             <h2 className="text-2xl font-semibold mb-6 dark:text-white">Send us a Message</h2>
             {submitSuccess ? (

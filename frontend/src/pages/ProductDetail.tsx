@@ -147,7 +147,7 @@ const ProductDetail = () => {
             <div className="flex gap-4">
               <span className="flex-1">
                 <button
-                  onClick={() => navigate('/contact')}
+                  onClick={() => navigate('/contact#contact-form')}
                   className="w-full inline-flex flex-col md:flex-row items-center justify-center px-6 py-3 bg-gray-600 hover:bg-gray-700 text-white rounded-lg transition duration-300 shadow-md hover:shadow-lg hover:scale-105"
                 >
                   <FaEnvelope className="text-2xl md:text-xl md:mr-2 mb-2 md:mb-0" />

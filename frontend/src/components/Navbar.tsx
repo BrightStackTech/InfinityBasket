@@ -117,7 +117,7 @@ const Navbar = () => {
                 </a>
             </div>
             <div className="flex items-center gap-2">
-              <Link to="/contact" className="px-4 py-1.5 bg-gold-500 text-white text-sm rounded hover:bg-gold-600 transition duration-300 hover:font-bold">
+              <Link to="/contact#contact-form" className="px-4 py-1.5 bg-gold-500 text-white text-sm rounded hover:bg-gold-600 transition duration-300 hover:font-bold">
                 ENQUIRE NOW
               </Link>
               <div className="hidden md:block transition duration-300">
